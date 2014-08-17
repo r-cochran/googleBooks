@@ -27,7 +27,30 @@ var GoogleBooks = {
 	},
 	search: function(){	
 		$("#searchResults").html("");
-		$.ajax();
+		$.ajax(
+			{
+				url: "https://www.googleapis.com/books/v1/volumes",
+		 		data: {
+		 			q: $("#searchText").val(),
+		 			startIndex: GoogleBooks.index,
+		 			maxResults: 10
+		 		}, 
+		 		success: function(data){
+		 			GoogleBooks.maxPages = data.totalItems / 10;
+		 			$("#navigation").removeClass("hidden");
+		 			$("#pageNumber").html("");
+		 			for(var i = 0; i <= GoogleBooks.maxPages; i++){
+		 				$("#pageNumber").append("<option value='" + i + "'>" + (i+1) + "</option>");
+		 			}
+		 			$("#pageNumber").val(GoogleBooks.index);
+		 			
+		 			$.each(data.items, function(n, item){
+		 				GoogleBooks.addRow(item);	
+		 			})
+	 				
+				}
+			}
+		);
 	},
 	addRow: function(item){
 		var info = item.volumeInfo,
