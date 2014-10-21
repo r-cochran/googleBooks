@@ -1,69 +1,32 @@
-<script src="C:\development\js\googleBooks\googleBooks\src\GoogleBooks.js"></script>
-<script src="C:\development\js\googleBooks\googleBooks\lib\jquery-2.1.1.min.js"></script>
-<link rel="stylesheet" href="C:\development\js\googleBooks\googleBooks\lib\bootstrap.min.css">
-<script src="C:\development\js\googleBooks\googleBooks\lib\bootstrap.min.js" ></script>
-<link href="../../lib/font-awesome-4.1.0/css/font-awesome.min.css" rel="stylesheet">
-<!--
 <script src="../GoogleBooks.js"></script>
-<script src="../../lib/jquery-2.1.1.min.js" />
+<script src="../../lib/jquery-2.1.1.min.js"></script>
 <link rel="stylesheet" href="../../lib/bootstrap.min.css">
-<script src="../../lib/bootstrap.min.js" />
--->
+<script src="../../lib/bootstrap.min.js" ></script>
+<link href="../../lib/font-awesome-4.1.0/css/font-awesome.min.css" rel="stylesheet">
 
 <html>	
 	<style type="text/css">
-		.row {
-			margin-top: 10px;
-		}
-		img {
-			margin-bottom: 10px;
-		}
-		.searchResult {
-			font-size: larger;
-			cursor: pointer;
-			border-bottom: 2px solid lightblue;
-		}
-		.searchResultDetail {
-			margin-left: 10px;
-			margin-right: 10px;
-			background-color: #f5f5f5;
-		}
-		.searchResult {
-			font-weight: bolder;
-		}
-		.publisher, .authors {
-			font-weight: normal;
-		}
-		.gold {
-			color: gold;
-		}
-		.fa {
-			font-size: larger;
-		}
-		select.form-control {
-			width: 100px;
-			display: inline-block;
-		}
+		
 	</style>
 	<body>
-		<div class="container">
-			<div class="row">
+		<div>
+			<div>
 				<h1>Google Books</h1>
 			</div>
-			<div class="row">
-				<input id="searchText" class="form-control" placeholder="Search" />
+			<div>
+				<input id="searchText" placeholder="Search" />
 			</div>
-			<div class="row">
-				<button id="searchButton" type="button" class="btn btn-primary">
+			<div>
+				<button id="searchButton" type="button">
 					<i class="fa fa-search"></i> Search 
 				</button>
 			</div>
-			<div id="navigation" class="row hidden">
-				<button id="previous" class="btn btn-default"> Previous </button>
-				<button id="next" class="btn btn-default"> Next </button>
-				<span>Page: <select id="pageNumber" class="form-control"></select></span>
+			<div id="navigation">
+				<button id="previous"> Previous </button>
+				<button id="next"> Next </button>
+				<span>Page: <select id="pageNumber"></select></span>
 			</div>
-			<div id="searchResults" class="row">
+			<div id="searchResults">
 			</div>
 		</div>
 	</body>	
